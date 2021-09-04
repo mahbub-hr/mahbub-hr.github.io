@@ -9,7 +9,26 @@ Click on the &lt;strong>Slides&lt;/strong> button above to view the built-in sli
 &lt;li>&lt;strong>Upload&lt;/strong> an existing slide deck to &lt;code>static/&lt;/code> and link using &lt;code>url_slides&lt;/code> parameter in the front matter of the talk file&lt;/li>
 &lt;li>&lt;strong>Embed&lt;/strong> your slides (e.g. Google Slides) or presentation video on this page using &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">shortcodes&lt;/a>.&lt;/li>
 &lt;/ul>
-&lt;p>Further event details, including &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">page elements&lt;/a> such as image galleries, can be added to the body of this page.&lt;/p></description></item><item><title>Welcome to Wowchemy, the website builder for Hugo</title><link>https://mahbub-hr.github.io/post/getting-started/</link><pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate><guid>https://mahbub-hr.github.io/post/getting-started/</guid><description>&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>Further event details, including &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">page elements&lt;/a> such as image galleries, can be added to the body of this page.&lt;/p></description></item><item><title>Blood cell detection from image using Mask-RCNN</title><link>https://mahbub-hr.github.io/project/blood-cell-detection-from-image-using-mask-rcnn/</link><pubDate>Mon, 21 Dec 2020 13:15:46 +0000</pubDate><guid>https://mahbub-hr.github.io/project/blood-cell-detection-from-image-using-mask-rcnn/</guid><description>&lt;!--StartFragment-->
+&lt;p>A complete blood cell count is an important test in medical diagnosis to evaluate overall health condition. Traditionally blood cells are counted manually using haemocytometer along with other laboratory equipment’s and chemical compounds, which is a time-consuming and tedious task. In this work, the authors present a machine learning approach for automatic identification and counting of three types of blood cells using Mask-RCNN image classification algorithm. Mask-RCNN framework has been trained with BCCD Dataset of blood smear images to automatically identify red blood cells, white blood cells, and platelets.&lt;/p>
+&lt;!--EndFragment--></description></item><item><title>MIPS 4 Bit Processor Design</title><link>https://mahbub-hr.github.io/project/mips-4-bit-processor-design-in-logisim/</link><pubDate>Mon, 21 Dec 2020 13:15:46 +0000</pubDate><guid>https://mahbub-hr.github.io/project/mips-4-bit-processor-design-in-logisim/</guid><description>&lt;!--StartFragment-->
+&lt;p>A MIPS processor that can do 4-bit operations. This processor was designed to do these 12 operations:&lt;/p>
+&lt;ol>
+&lt;li>Addition(add)&lt;/li>
+&lt;li>Subtraction(sub)&lt;/li>
+&lt;li>Add immediate(addi)&lt;/li>
+&lt;li>Subtract immediate(subi)&lt;/li>
+&lt;li>Logical OR(or)&lt;/li>
+&lt;li>OR immediate(ori)&lt;/li>
+&lt;li>Logical AND(and)&lt;/li>
+&lt;li>AND immediate(ori)&lt;/li>
+&lt;li>Branch Equal(beq)&lt;/li>
+&lt;li>Jump(j)&lt;/li>
+&lt;li>Load from memory(lw)&lt;/li>
+&lt;li>Store into memory(sw)&lt;/li>
+&lt;/ol>
+&lt;p>The design was implemented and validated in logisim simulator. The ciruite design file along with a sample instruction file can be found in the &lt;a href="https://github.com/mahbub-hr/mips-4-bit-processor" target="_blank" rel="noopener">code repository&lt;/a>.&lt;/p>
+&lt;!--EndFragment--></description></item><item><title>Welcome to Wowchemy, the website builder for Hugo</title><link>https://mahbub-hr.github.io/post/getting-started/</link><pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate><guid>https://mahbub-hr.github.io/post/getting-started/</guid><description>&lt;h2 id="overview">Overview&lt;/h2>
 &lt;ol>
 &lt;li>The Wowchemy website builder for Hugo, along with its starter templates, is designed for professional creators, educators, and teams/organizations - although it can be used to create any kind of site&lt;/li>
 &lt;li>The template can be modified and customised to suit your needs. It&amp;rsquo;s a good platform for anyone looking to take control of their data and online identity whilst having the convenience to start off with a &lt;strong>no-code solution (write in Markdown and customize with YAML parameters)&lt;/strong> and having &lt;strong>flexibility to later add even deeper personalization with HTML and CSS&lt;/strong>&lt;/li>
