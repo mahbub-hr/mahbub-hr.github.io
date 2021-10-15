@@ -25,7 +25,7 @@ experience:
   - title: Lecturer of Computer Science and Engineering
     company: United International University
     company_url: ''
-    company_logo: ''
+    company_logo: org-uiu
     location: United City, Madani Ave, Dhaka 1212
     date_start: '2021-07-03'
     date_end: ''
@@ -47,7 +47,7 @@ experience:
     description: |2-
         Responsibilities include:
         
-        * Creating REST API
+        * Designing and Coding REST API
         * Testing
         * Deploying
 
