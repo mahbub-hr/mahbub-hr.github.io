@@ -21,27 +21,13 @@ date_format: Jan 2006
 #   Required fields are `title`, `company`, and `date_start`.
 #   Leave `date_end` empty if it's your current employer.
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
-experience:
-  - title: CEO
-    company: GenCoin
-    company_url: ''
-    company_logo: org-gc
-    location: California
-    date_start: '2021-01-01'
-    date_end: ''
-    description: |2-
-        Responsibilities include:
-        
-        * Analysing
-        * Modelling
-        * Deploying
-        
+experience:      
   - title: Lecturer of Computer Science and Engineering
     company: United International University
     company_url: ''
     company_logo: ''
     location: United City, Madani Ave, Dhaka 1212
-    date_start: '2020-07-03'
+    date_start: '2021-07-03'
     date_end: ''
     description: |
       Recently taught courses:
@@ -50,6 +36,20 @@ experience:
       * Object Oriented Programming Lab(CSE 1116)
       * Microprocessor, Microncontroller and Interfacing(CSE 425)
       * Pattern Recognition Lab (CSI 416)
+
+  - title: Backend Java Developer
+    company: Integrated Education Information Management System, BUET
+    company_url: ''
+    company_logo: ''
+    location: Dhaka
+    date_start: '2021-03-15'
+    date_end: '2021-07-02'
+    description: |2-
+        Responsibilities include:
+        
+        * Creating REST API
+        * Testing
+        * Deploying
 
 design:
   columns: '2'
