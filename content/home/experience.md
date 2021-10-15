@@ -36,14 +36,20 @@ experience:
         * Modelling
         * Deploying
         
-  - title: Professor of Semiconductor Physics
-    company: University X
+  - title: Lecturer of Computer Science and Engineering
+    company: United International University
     company_url: ''
-    company_logo: org-x
-    location: California
-    date_start: '2016-01-01'
-    date_end: '2020-12-31'
-    description: Taught electronic engineering and researched semiconductor physics.
+    company_logo: ''
+    location: United City, Madani Ave, Dhaka 1212
+    date_start: '2020-07-03'
+    date_end: ''
+    description: |
+      Recently taught courses:
+
+      * Object Oriented Programming(CSE 1115)
+      * Object Oriented Programming Lab(CSE 1116)
+      * Microprocessor, Microncontroller and Interfacing(CSE 425)
+      * Pattern Recognition Lab (CSI 416)
 
 design:
   columns: '2'
