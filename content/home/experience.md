@@ -27,7 +27,7 @@ experience:
     company_url: ''
     company_logo: org-uiu
     location: United City, Madani Ave, Dhaka 1212
-    date_start: '2021-07-03'
+    date_start: '2022-03-01'
     date_end: ''
     description: |
       Recently taught courses:
@@ -37,13 +37,27 @@ experience:
       * Microprocessor, Microncontroller and Interfacing(CSE 425)
       * Pattern Recognition Lab (CSI 416)
 
+  - title: Backend Java Developer(Part-Time)
+    company: Integrated Education Information Management System, BUET
+    company_url: ''
+    company_logo: ''
+    location: Dhaka
+    date_start: '2022-03-01'
+    date_end: ''
+    description: |2-
+        Responsibilities include:
+        
+        * Designing and Coding REST API
+        * Testing
+        * Deploying
+
   - title: Backend Java Developer
     company: Integrated Education Information Management System, BUET
     company_url: ''
     company_logo: ''
     location: Dhaka
     date_start: '2021-03-15'
-    date_end: '2021-07-02'
+    date_end: '2022-03-01'
     description: |2-
         Responsibilities include:
         
