@@ -47,8 +47,9 @@ experience:
     description: |2-
         Responsibilities include:
         
-        * Designing and Coding REST API
-        * Testing
+        * Lead the backend team.
+        * Code Review
+        * Experimenting new tools and technolgies.
         * Deploying
 
   - title: Backend Java Developer
@@ -62,7 +63,8 @@ experience:
         Responsibilities include:
         
         * Designing and Coding REST API
-        * Testing
+        * Securing APIs using Spring Security module
+        * Implementing single sign-on using Keycloak
         * Deploying
 
 design:
