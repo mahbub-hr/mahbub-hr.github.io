@@ -22,13 +22,13 @@ twitter: ''
 
 # email: test@example.org
 # phone: 888 888 88 88
-# address:
-#   street: United City, Madani Ave 
-#   city: Dhaka
-#   region: Dhaka North
-#   postcode: '1212'
-#   country: Bangladesh
-#   country_code: BD
+address:
+  street: United City, Madani Ave 
+  city: Dhaka
+  region: Dhaka North
+  postcode: '1212'
+  country: Bangladesh
+  country_code: BD
 # coordinates:
 #   latitude: '37.4275'
 #   longitude: '-122.1697'

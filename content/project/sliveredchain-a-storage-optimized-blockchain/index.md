@@ -16,16 +16,15 @@ external_link: ""
 # Set `preview_only` to `true` to just use the image for thumbnails.
 
 placement: 1
-caption: Blood Cell Count using MASK-RCNN
+caption: Reducing Storage by Sharding the Chain
 focal_point: "Center"
 preview_only: false
-alt_text: Blood Cell Count using MASK-RCNN.
+alt_text: Reducing Storage by Sharding the Chain
 
-url_code: "https://colab.research.google.com/drive/1-ENakRVTVx97rVX7TOxILdlzvQfxVpQF?usp=sharing"
+# url_code: "https://colab.research.google.com/drive/1-ENakRVTVx97rVX7TOxILdlzvQfxVpQF?usp=sharing"
 ---
 
 <!--StartFragment-->
-
-A complete blood cell count is an important test in medical diagnosis to evaluate overall health condition. Traditionally blood cells are counted manually using haemocytometer along with other laboratory equipment’s and chemical compounds, which is a time-consuming and tedious task. In this work, the authors present a machine learning approach for automatic identification and counting of three types of blood cells using Mask-RCNN image classification algorithm. Mask-RCNN framework has been trained with BCCD Dataset of blood smear images to automatically identify red blood cells, white blood cells, and platelets.
+I completed this project as a part of my undergraduate thesis. This project aims to optimize storage usage of a [Private Blockchain](https://www.investopedia.com/news/public-private-permissioned-blockchains-compared/#toc-private-blockchain) system. Typically, each node in the system stores whole blockchain. This consumes a lot of storage. In my thesis, I propose to only store a part of the chain in each node. <!-- This means the number of copies of the chain in the system is equal to the number of nodes present in the system. --> This is done by carefully dividing the chain and distributing the pieces to each peer. As a proof of concept, I implemented this proposal in [Flask](https://flask.palletsprojects.com/en/2.2.x/) framework. Our experimental evaluation shows SliveredChain can reduce the required storage by 66.67%. Our method scales very well with the number of nodes in the network.
 
 <!--EndFragment-->
