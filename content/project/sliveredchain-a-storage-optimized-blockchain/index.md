@@ -1,6 +1,6 @@
 ---
 title: "SliveredChain: A Storage Optimized Private Blockchain"
-date: "2020-12-21T13:15:46.151Z"
+date: "2020-11-21T13:15:46.151Z"
 
 # Optional external URL for project (replaces project detail page).
 external_link: ""
