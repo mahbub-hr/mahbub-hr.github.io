@@ -24,6 +24,14 @@ content:
     netlify:
       # Enable CAPTCHA challenge to reduce spam?
       captcha: true
+
+  address:
+    street: United City, Madani Ave 
+    city: Dhaka
+    region: Dhaka North
+    postcode: '1212'
+    country: Bangladesh
+    country_code: BD
   
 design:
   columns: '2'
