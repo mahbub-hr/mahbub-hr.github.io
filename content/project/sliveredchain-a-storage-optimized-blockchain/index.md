@@ -1,5 +1,5 @@
 ---
-title: Blood cell detection from image using Mask-RCNN
+title: "SliveredChain: A Storage Optimized Private Blockchain"
 date: "2020-12-21T13:15:46.151Z"
 
 # Optional external URL for project (replaces project detail page).
