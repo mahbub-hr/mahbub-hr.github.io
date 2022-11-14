@@ -1,7 +1,7 @@
 ---
 # An instance of the Contact widget.
 # Documentation: https://sourcethemes.com/academic/docs/page-builder/
-widget: pages
+widget: blank
 active: true
 # This file represents a page section.
 headless: true
