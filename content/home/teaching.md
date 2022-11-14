@@ -54,3 +54,7 @@ Summer 2021:
 - CSE 1115 – Object Oriented Programming
 - CSE 1116 – Object Oriented Programming Laboratory
 - CSI 416 – Pattern Recognition Lab
+
+<div class="col py-2"><div class="card"><div class="card-body"><div class="d-flex align-content-start"><div class="mr-2 mb-2"><img src="/media/icons/brands/org-uiu.svg" width="56px" height="56px" alt="United International University"></div><div><div class="section-subheading card-title exp-title text-muted my-0">Lecturer of Computer Science and Engineering</div><div class="section-subheading card-title exp-company text-muted my-0">United International University</div><div class="text-muted exp-meta">Mar 2022 –
+Present
+<span class="middot-divider"></span><span>United City, Madani Ave, Dhaka 1212</span></div></div></div><div class="card-text"><p>Recently taught courses:</p><ul><li>Object Oriented Programming(CSE 1115)</li><li>Object Oriented Programming Lab(CSE 1116)</li><li>Discrete Mathmatics (CSE 2213)</li><li>Computer Network Lab (CSI 324)</li></ul></div></div></div></div>
