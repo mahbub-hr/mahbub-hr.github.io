@@ -34,8 +34,8 @@ experience:
 
       * Object Oriented Programming(CSE 1115)
       * Object Oriented Programming Lab(CSE 1116)
-      * Microprocessor, Microncontroller and Interfacing(CSE 425)
-      * Pattern Recognition Lab (CSI 416)
+      * Discrete Mathmatics (CSE 2213)
+      * Computer Network Lab (CSI 324)
 
   - title: Backend Java Developer(Part-Time)
     company: Integrated Education Information Management System, BUET
@@ -47,7 +47,6 @@ experience:
     description: |2-
         Responsibilities include:
         
-        * Lead the backend team.
         * Code Review
         * Experimenting new tools and technolgies.
         * Deploying
