@@ -1,7 +1,8 @@
 ---
 # An instance of the Contact widget.
 # Documentation: https://sourcethemes.com/academic/docs/page-builder/
-widget: contact
+widget: pages
+active: true
 # This file represents a page section.
 headless: true
 
@@ -12,14 +13,19 @@ title: Teaching
 subtitle:
 
 content:
-  # Automatically link email and phone or display as text?
-  autolink: true
-  
-  # Email form provider
+  # Page type to display. E.g. post, event, publication...
+  page_type: event
+  # Choose how many pages you would like to display (0 = all pages)
+  count: 5
   
 design:
   columns: '2'
-  view: Card
+  # Choose a view for the listings:
+  #   1 = List
+  #   2 = Compact
+  #   3 = Card
+  #   4 = Citation (publication only)
+  view: 3
 ---
 
 Summer 2022:
