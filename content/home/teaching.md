@@ -2,7 +2,6 @@
 # An instance of the Contact widget.
 # Documentation: https://sourcethemes.com/academic/docs/page-builder/
 widget: contact
-view: Card
 # This file represents a page section.
 headless: true
 
@@ -20,6 +19,7 @@ content:
   
 design:
   columns: '2'
+  view: Card
 ---
 
 Summer 2022:
