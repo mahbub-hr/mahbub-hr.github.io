@@ -22,28 +22,24 @@ design:
   columns: '2'
 ---
 
-Summer 2022:
-
+*Summer 2022:
 - CSE 425 – Microprocessor, Microcontroller and Interfacing
 - CSE 426 – Microprocessor, Microcontroller and Interfacing Laboratory
 - CSE 324 – Computer Networks Laboratory
 - SOC 101/SOC 2101 – Society, Environment and Engineering Ethics/Society, Technology and Engineering Ethics
 
-Spring 2021
-
+*Spring 2021:
 - CSE 425 – Microprocessor, Microcontroller and Interfacing
 - CSE 426 – Microprocessor, Microcontroller and Interfacing Laboratory
 - CSE 324 – Computer Networks Laboratory
 - CSI 415 – Pattern Recognition
 
-Fall 2021
-
+*Fall 2021
 - CSE 425 – Microprocessor, Microcontroller and Interfacing
 - CSE 426 – Microprocessor, Microcontroller and Interfacing Laboratory
 - CSE 1112 –  Structured Programming Language Laboratory
 
-Summer 2021
-
+*Summer 2021
 - CSE 425 – Microprocessor, Microcontroller and Interfacing
 - CSE 1115 – Object Oriented Programming
 - CSE 1116 – Object Oriented Programming Laboratory
