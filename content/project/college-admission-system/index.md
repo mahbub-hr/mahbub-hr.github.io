@@ -1,9 +1,9 @@
 ---
 title: College Admission System
-summary: An example of using the in-built project page.
+summary: For higher secondary education, Bangladeshi mainstream students must be enrolled in colleges after passing the Secondary School Certificate Examination (SSC). The goal of College Admission System project is to create a web-based application to facilitate the admission process by obeying the guideline passed by the Ministry of Education.
 tags:
-- Deep Learning
-date: "2016-04-27T00:00:00Z"
+- Web Development, Spring Boot
+date: "2022-11-07T00:00:00Z"
 
 # Optional external URL for project (replaces project detail page).
 external_link: ""
