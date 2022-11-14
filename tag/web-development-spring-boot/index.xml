@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web Development, Spring Boot | Mahbub Hossain Raton</title><link>https://mahbub-hr.github.io/tag/web-development-spring-boot/</link><atom:link href="https://mahbub-hr.github.io/tag/web-development-spring-boot/index.xml" rel="self" type="application/rss+xml"/><description>Web Development, Spring Boot</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 07 Nov 2022 00:00:00 +0000</lastBuildDate><image><url>https://mahbub-hr.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url><title>Web Development, Spring Boot</title><link>https://mahbub-hr.github.io/tag/web-development-spring-boot/</link></image><item><title>College Admission System</title><link>https://mahbub-hr.github.io/project/college-admission-system/</link><pubDate>Mon, 07 Nov 2022 00:00:00 +0000</pubDate><guid>https://mahbub-hr.github.io/project/college-admission-system/</guid><description>&lt;p>College Admission System (CAD) is a part of the parent proejct Integrated Educational Information Management System (IEIMS). IEIMS project is an effort from Ministry of Education, Bangladesh to create a common database of information of every educational entity including students, educational institution and education board. Therefore, the Ministry of education intends to implement a common platform for managing each educational functionalities efficinetly.&lt;/p>
+&lt;p>For higher secondary education, Bangladeshi mainstream students must be enrolled in colleges after passing the Secondary School Certificate Examination (SSC). The goal of College Admission System project is to create a web-based application to facilitate the admission process by obeying the guideline passed by the Ministry of Education.&lt;/p>
+&lt;p>In CAD project, I designed and developed most of the backend APIs. I was also responsible to secure the APIs using Spring Security. One of my most notable contributions to this project is to implement a way to modify API roles at runtime without the need of recompiling the code.&lt;/p>
+&lt;p>Technologies – Spring Boot, Hibernate with JPA, JSON, mockito, junit, Spring Data, Spring Security
+Tools – Maven, Git&lt;/p>
+&lt;p>My key contributions are:&lt;/p>
+&lt;ul>
+&lt;li>Created maven projects by implementing various hierarchal pom features and adding various maven plugins.&lt;/li>
+&lt;li>Implemented Backend APIs using Spring Boot.&lt;/li>
+&lt;li>Secured the APIs using Spring Security module.&lt;/li>
+&lt;li>Implemented Data access logic using Spring Data, Hibernate with JPA and criteria builders.&lt;/li>
+&lt;li>Setup Keycloak and added single sign on using Keycloak.&lt;/li>
+&lt;li>Writing unit test using Junit 5 and Mockito Framework&lt;/li>
+&lt;li>Excel file processing using Apache POI library&lt;/li>
+&lt;li>Code optimization&lt;/li>
+&lt;li>Reviewing code for team members.&lt;/li>
+&lt;/ul></description></item></channel></rss>
