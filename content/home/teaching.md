@@ -17,22 +17,34 @@ content:
   autolink: true
   
   # Email form provider
-  form:
-    provider: netlify
-    formspree:
-      id:
-    netlify:
-      # Enable CAPTCHA challenge to reduce spam?
-      captcha: true
-
-  address:
-    street: United City, Madani Ave 
-    city: Dhaka
-    region: Dhaka North
-    postcode: '1212'
-    country: Bangladesh
-    country_code: BD
   
 design:
-  columns: '1'
+  columns: '2'
 ---
+
+Summer 2022:
+
+- CSE 425 – Microprocessor, Microcontroller and Interfacing
+- CSE 426 – Microprocessor, Microcontroller and Interfacing Laboratory
+- CSE 324 – Computer Networks Laboratory
+- SOC 101/SOC 2101 – Society, Environment and Engineering Ethics/Society, Technology and Engineering Ethics
+
+Spring 2021
+
+- CSE 425 – Microprocessor, Microcontroller and Interfacing
+- CSE 426 – Microprocessor, Microcontroller and Interfacing Laboratory
+- CSE 324 – Computer Networks Laboratory
+- CSI 415 – Pattern Recognition
+
+Fall 2021
+
+- CSE 425 – Microprocessor, Microcontroller and Interfacing
+- CSE 426 – Microprocessor, Microcontroller and Interfacing Laboratory
+- CSE 1112 –  Structured Programming Language Laboratory
+
+Summer 2021
+
+- CSE 425 – Microprocessor, Microcontroller and Interfacing
+- CSE 1115 – Object Oriented Programming
+- CSE 1116 – Object Oriented Programming Laboratory
+- CSI 416 – Pattern Recognition Lab
