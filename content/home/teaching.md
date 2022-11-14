@@ -31,15 +31,19 @@ design:
 <div class="col py-2">
    <div class="card">
       <div class="card-body">
-         <div class="card-text">
-            <p>Summer 2022:</p>
-            <ul>
-               <li>CSE 425 – Microprocessor, Microcontroller and Interfacing</li>
-               <li>CSE 426 – Microprocessor, Microcontroller and Interfacing Laboratory</li>
-               <li>CSE 324 – Computer Networks Laboratory</li>
-               <li>SOC 101/SOC 2101 – Society, Environment and Engineering Ethics/Society, Technology and Engineering Ethics</li>
-            </ul>
-         </div>
+        <div class="d-flex align-content-start">
+          <div>
+            <div class="section-subheading card-title exp-title text-muted my-0">Summer 2022</div>
+          </div>
+        </div>
+        <div class="card-text">
+          <ul>
+              <li>CSE 425 – Microprocessor, Microcontroller and Interfacing</li>
+              <li>CSE 426 – Microprocessor, Microcontroller and Interfacing Laboratory</li>
+              <li>CSE 324 – Computer Networks Laboratory</li>
+              <li>SOC 101/SOC 2101 – Society, Environment and Engineering Ethics/Society, Technology and Engineering Ethics</li>
+          </ul>
+        </div>
       </div>
    </div>
 </div>
