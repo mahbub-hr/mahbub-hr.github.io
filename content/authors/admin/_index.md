@@ -64,4 +64,4 @@ highlight_name: false
 
 I am a [lecturer](https://cse.uiu.ac.bd/profiles/mahbub/) at the department of Computer Science & Engineering of [United International University(UIU)](https://www.uiu.ac.bd). I completed my BSc in Computer Science & Engineering (CSE) from Bangladesh University of Engineering and Technology (BUET) in 2021. It is the most prestigious academic institution in Bangladesh. After completing my graduation from BUET, I joined IEIMS project as a backend developer. In July 2021, I joined UIU as a lecturer. My research interests include the security in computer and network security and blockchain. During my undergraduate thesis, I conducted my research on the efficiency of blockchain under the supervision of [Dr. Muhammad Abdullah Adnan](https://sites.google.com/site/abdullahadnan/home)
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
+{{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/CV_Mahbub.pdf" "newtab" >}}resumé{{< /staticref >}}.
