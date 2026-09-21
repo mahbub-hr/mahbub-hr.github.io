@@ -1,15 +1,43 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mahbub Hossain Raton</title><link>https://mahbub-hr.github.io/</link><atom:link href="https://mahbub-hr.github.io/index.xml" rel="self" type="application/rss+xml"/><description>Mahbub Hossain Raton</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0000</lastBuildDate><image><url>https://mahbub-hr.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url><title>Mahbub Hossain Raton</title><link>https://mahbub-hr.github.io/</link></image><item><title>Example Talk</title><link>https://mahbub-hr.github.io/talk/example-talk/</link><pubDate>Sat, 01 Jun 2030 13:00:00 +0000</pubDate><guid>https://mahbub-hr.github.io/talk/example-talk/</guid><description>&lt;div class="alert alert-note">
-&lt;div>
-Click on the &lt;strong>Slides&lt;/strong> button above to view the built-in slides feature.
-&lt;/div>
-&lt;/div>
-&lt;p>Slides can be added in a few ways:&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mahbub H. Raton</title><link>https://mahbub-hr.github.io/</link><atom:link href="https://mahbub-hr.github.io/index.xml" rel="self" type="application/rss+xml"/><description>Mahbub H. Raton</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2026 Mahbub H. Raton</copyright><lastBuildDate>Sun, 01 Feb 2026 00:00:00 +0000</lastBuildDate><image><url>https://mahbub-hr.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url><title>Mahbub H. Raton</title><link>https://mahbub-hr.github.io/</link></image><item><title>IR-Sentinel: LLVM-IR Security Analysis via MCP</title><link>https://mahbub-hr.github.io/project/ir-sentinel-llvm-ir-security-analysis-via-mcp/</link><pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate><guid>https://mahbub-hr.github.io/project/ir-sentinel-llvm-ir-security-analysis-via-mcp/</guid><description>&lt;p>Language models are good at recognizing patterns in code and bad at knowing what the compiler actually did with it. IR-Sentinel is a proof of concept that closes that gap by handing the model the compiler.&lt;/p>
+&lt;p>It is a &lt;strong>Model Context Protocol (MCP)&lt;/strong> server, built on &lt;code>FastMCP&lt;/code>, that exposes a local LLVM toolchain — &lt;code>clang&lt;/code> and &lt;code>opt&lt;/code> — as tools an AI agent can call. The agent pipeline then:&lt;/p>
+&lt;ol>
+&lt;li>Compiles C++ source to &lt;strong>LLVM IR&lt;/strong>,&lt;/li>
+&lt;li>Extracts &lt;strong>control flow graph&lt;/strong> metrics from it,&lt;/li>
+&lt;li>Iteratively queries &lt;strong>Gemini&lt;/strong> against that structured view to identify use-after-free vulnerability patterns.&lt;/li>
+&lt;/ol>
+&lt;p>The interesting part is that the model reasons over the IR and the CFG rather than over surface syntax, so it sees the program the way the optimizer does.&lt;/p>
+&lt;p>&lt;em>Built with Python, LLVM, Gemini, and FastMCP.&lt;/em>&lt;/p></description></item><item><title>AEGIS: An LLVM Pass for Hardware Reliability</title><link>https://mahbub-hr.github.io/project/aegis-llvm-compiler-pass-for-hardware-reliability/</link><pubDate>Fri, 01 Aug 2025 00:00:00 +0000</pubDate><guid>https://mahbub-hr.github.io/project/aegis-llvm-compiler-pass-for-hardware-reliability/</guid><description>&lt;p>Transient hardware faults — a bit flipped in a cache line or a register by a stray particle or a marginal voltage — do not announce themselves. The machine keeps running and quietly produces the wrong answer. AEGIS is an LLVM pass that makes a program check its own arithmetic, so that a corrupted value is caught before it can escape.&lt;/p>
+&lt;p>The pass implements &lt;strong>Error Detection by Duplicated Instructions (EDDI)&lt;/strong>. It duplicates global, stack, and heap values and compares the two copies at the points where a wrong value would become observable: before a store, before a branch, and before a function call. Getting this to work on real programs meant more than duplicating instructions:&lt;/p>
 &lt;ul>
-&lt;li>&lt;strong>Create&lt;/strong> slides using Wowchemy&amp;rsquo;s &lt;a href="https://wowchemy.com/docs/managing-content/#create-slides" target="_blank" rel="noopener">&lt;em>Slides&lt;/em>&lt;/a> feature and link using &lt;code>slides&lt;/code> parameter in the front matter of the talk file&lt;/li>
-&lt;li>&lt;strong>Upload&lt;/strong> an existing slide deck to &lt;code>static/&lt;/code> and link using &lt;code>url_slides&lt;/code> parameter in the front matter of the talk file&lt;/li>
-&lt;li>&lt;strong>Embed&lt;/strong> your slides (e.g. Google Slides) or presentation video on this page using &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">shortcodes&lt;/a>.&lt;/li>
+&lt;li>&lt;strong>Call boundaries.&lt;/strong> Call sites are rewritten to pass shadow arguments and retrieve shadow return values, so duplication survives across function calls rather than stopping at each one.&lt;/li>
+&lt;li>&lt;strong>Pointer sizes.&lt;/strong> Knowing how much memory to duplicate behind a pointer is not something the IR tells you. The pass recovers it from DWARF debug metadata, falling back to a signature table for library calls.&lt;/li>
+&lt;li>&lt;strong>Extensibility.&lt;/strong> Hardening schemes are registered through a strategy registry, so adding a new one is a single self-registering file rather than an edit threaded through the pass.&lt;/li>
+&lt;li>&lt;strong>Testing.&lt;/strong> A regression suite validates both that the transformation is correct and that fault-detection coverage holds across the benchmark suite.&lt;/li>
 &lt;/ul>
-&lt;p>Further event details, including &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">page elements&lt;/a> such as image galleries, can be added to the body of this page.&lt;/p></description></item><item><title>College Admission System</title><link>https://mahbub-hr.github.io/project/college-admission-system/</link><pubDate>Mon, 07 Nov 2022 00:00:00 +0000</pubDate><guid>https://mahbub-hr.github.io/project/college-admission-system/</guid><description>&lt;p>College Admission System (CAD) is a part of the parent proejct Integrated Educational Information Management System (IEIMS). IEIMS project is an effort from Ministry of Education, Bangladesh to create a common database of information of every educational entity including students, educational institution and education board. Therefore, the Ministry of education intends to implement a common platform for managing each educational functionalities efficinetly.&lt;/p>
+&lt;p>Measured against L1 cache fault injection, AEGIS reduces silent data corruption by &lt;strong>1.3× to 29×&lt;/strong> across &lt;code>qsort&lt;/code>, &lt;code>matmul&lt;/code>, and &lt;code>CRC32&lt;/code>, at a runtime cost of 1.6× to 3.0×.&lt;/p>
+&lt;p>&lt;em>Built with C++, LLVM, Clang, and CMake.&lt;/em>&lt;/p></description></item><item><title>Architectural Fault Injection Framework</title><link>https://mahbub-hr.github.io/project/architectural-fault-injection-framework/</link><pubDate>Fri, 01 Aug 2025 00:00:00 +0000</pubDate><guid>https://mahbub-hr.github.io/project/architectural-fault-injection-framework/</guid><description>&lt;p>You cannot argue about how much a reliability technique helps without measuring how often things actually go wrong. This framework extends the gem5 simulator to inject faults into the register file and the L1 cache, and pinpoints the first instruction that reads corrupted data — at under &lt;strong>0.1% simulation overhead&lt;/strong>.&lt;/p>
+&lt;p>The harder half of the problem is statistical. A single injection tells you nothing; useful confidence intervals need hundreds of thousands of runs. The Python automation layer around gem5 makes that tractable:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Checkpointing and parallelism.&lt;/strong> Simulations resume from gem5 checkpoints and are distributed across multiple machines. A 600,000-injection campaign across three benchmarks went from &lt;strong>7 days to under 24 hours&lt;/strong>.&lt;/li>
+&lt;li>&lt;strong>Outcome classification.&lt;/strong> Each run is automatically classified as silent data corruption, masked, detected, crash, or timeout, and reported with 99% confidence margins.&lt;/li>
+&lt;li>&lt;strong>Root-cause analysis.&lt;/strong> When an injection produces a wrong result, the harness diffs execution traces to find where the corrupted value first diverged.&lt;/li>
+&lt;/ul>
+&lt;p>This is the measurement apparatus behind the &lt;a href="../aegis-llvm-compiler-pass-for-hardware-reliability/">AEGIS&lt;/a> numbers.&lt;/p>
+&lt;p>&lt;em>Built with C++, Python, gem5, Docker, and Linux.&lt;/em>&lt;/p></description></item><item><title>Architectural Hurdles: Exploring the Difficulties of x86-to-ARM Binary Cross-Compilation</title><link>https://mahbub-hr.github.io/publication/architectural-hurdles/</link><pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate><guid>https://mahbub-hr.github.io/publication/architectural-hurdles/</guid><description/></item><item><title>Cross-Compiling x86 Binaries to ARM</title><link>https://mahbub-hr.github.io/project/cross-compiling-x86-binaries-to-arm/</link><pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate><guid>https://mahbub-hr.github.io/project/cross-compiling-x86-binaries-to-arm/</guid><description>&lt;p>Moving a program to a new instruction set architecture is straightforward when you have the source. When you do not, you have to reconstruct enough of the program&amp;rsquo;s meaning from the binary itself to emit correct code for a different machine.&lt;/p>
+&lt;p>This project extended &lt;a href="https://github.com/trailofbits/binrec-tob" target="_blank" rel="noopener">Binrec&lt;/a> — a dynamic binary lifting framework that recovers LLVM IR by observing concrete executions — to target AArch64 from x86 input. The work centered on two things:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Adapting the lifting pipeline.&lt;/strong> Binrec&amp;rsquo;s dynamic execution and IR recovery stages assumed an x86 target throughout; retargeting them meant separating what was genuinely architecture-neutral in the recovered IR from what had quietly encoded x86 assumptions.&lt;/li>
+&lt;li>&lt;strong>A translation layer for library calls.&lt;/strong> Calls out to the C library cross the boundary where the two calling conventions disagree. An x64-to-AArch64 shim translates arguments and return values at that boundary.&lt;/li>
+&lt;/ul>
+&lt;p>The result runs two real-world SPEC CPU 2017 programs, &lt;code>mcf&lt;/code> and &lt;code>xalancbmk&lt;/code>, correctly on ARM, at roughly &lt;strong>6× slowdown relative to native&lt;/strong>.&lt;/p>
+&lt;p>A manuscript on the architectural mismatches this work surfaced is in preparation.&lt;/p>
+&lt;p>&lt;em>Built with LLVM, C++, S2E, and x86/ARM assembly.&lt;/em>&lt;/p></description></item><item><title>WARIR: A WebAssembly Optimizing Compiler</title><link>https://mahbub-hr.github.io/project/warir-wasm-optimizer-compiler/</link><pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate><guid>https://mahbub-hr.github.io/project/warir-wasm-optimizer-compiler/</guid><description>&lt;p>A complete compiler pipeline from the SMPL teaching language down to WebAssembly, written for a graduate compilers course.&lt;/p>
+&lt;p>The back end is where most of the work went:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Graph-coloring register allocation&lt;/strong>, building the interference graph from live ranges and spilling when the graph is not colorable with the available registers.&lt;/li>
+&lt;li>&lt;strong>SSA-based dataflow analysis&lt;/strong> driving common subexpression elimination and copy propagation, with the optimizations expressed as transformations on the SSA form rather than ad-hoc peephole rules.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;em>Built with Python, Node.js, and WebAssembly.&lt;/em>&lt;/p></description></item><item><title>College Admission System</title><link>https://mahbub-hr.github.io/project/college-admission-system/</link><pubDate>Mon, 07 Nov 2022 00:00:00 +0000</pubDate><guid>https://mahbub-hr.github.io/project/college-admission-system/</guid><description>&lt;p>College Admission System (CAD) is a part of the parent proejct Integrated Educational Information Management System (IEIMS). IEIMS project is an effort from Ministry of Education, Bangladesh to create a common database of information of every educational entity including students, educational institution and education board. Therefore, the Ministry of education intends to implement a common platform for managing each educational functionalities efficinetly.&lt;/p>
 &lt;p>For higher secondary education, Bangladeshi mainstream students must be enrolled in colleges after passing the Secondary School Certificate Examination (SSC). The goal of College Admission System project is to create a web-based application to facilitate the admission process by obeying the guideline passed by the Ministry of Education.&lt;/p>
 &lt;p>In CAD project, I designed and developed most of the backend APIs. I was also responsible to secure the APIs using Spring Security. One of my most notable contributions to this project is to implement a way to modify API roles at runtime without the need of recompiling the code.&lt;/p>
 &lt;p>Technologies – Spring Boot, Hibernate with JPA, JSON, mockito, junit, Spring Data, Spring Security
@@ -44,189 +72,6 @@ Tools – Maven, Git&lt;/p>
 &lt;li>Store into memory(sw)&lt;/li>
 &lt;/ol>
 &lt;p>The design was implemented and validated in logisim simulator. The ciruite design file along with a sample instruction file can be found in the &lt;a href="https://github.com/mahbub-hr/mips-4-bit-processor" target="_blank" rel="noopener">code repository&lt;/a>.&lt;/p>
-&lt;!--EndFragment--></description></item><item><title>Welcome to Wowchemy, the website builder for Hugo</title><link>https://mahbub-hr.github.io/post/getting-started/</link><pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate><guid>https://mahbub-hr.github.io/post/getting-started/</guid><description>&lt;h2 id="overview">Overview&lt;/h2>
-&lt;ol>
-&lt;li>The Wowchemy website builder for Hugo, along with its starter templates, is designed for professional creators, educators, and teams/organizations - although it can be used to create any kind of site&lt;/li>
-&lt;li>The template can be modified and customised to suit your needs. It&amp;rsquo;s a good platform for anyone looking to take control of their data and online identity whilst having the convenience to start off with a &lt;strong>no-code solution (write in Markdown and customize with YAML parameters)&lt;/strong> and having &lt;strong>flexibility to later add even deeper personalization with HTML and CSS&lt;/strong>&lt;/li>
-&lt;li>You can work with all your favourite tools and apps with hundreds of plugins and integrations to speed up your workflows, interact with your readers, and much more&lt;/li>
-&lt;/ol>
-&lt;figure id="figure-the-template-is-mobile-first-with-a-responsive-design-to-ensure-that-your-site-looks-stunning-on-every-device">
-&lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://raw.githubusercontent.com/wowchemy/wowchemy-hugo-modules/master/academic.png" alt="The template is mobile first with a responsive design to ensure that your site looks stunning on every device." loading="lazy" data-zoomable />&lt;/div>
-&lt;/div>&lt;figcaption>
-The template is mobile first with a responsive design to ensure that your site looks stunning on every device.
-&lt;/figcaption>&lt;/figure>
-&lt;h2 id="get-started">Get Started&lt;/h2>
-&lt;ul>
-&lt;li>👉 &lt;a href="https://wowchemy.com/templates/" target="_blank" rel="noopener">&lt;strong>Create a new site&lt;/strong>&lt;/a>&lt;/li>
-&lt;li>📚 &lt;a href="https://wowchemy.com/docs/" target="_blank" rel="noopener">&lt;strong>Personalize your site&lt;/strong>&lt;/a>&lt;/li>
-&lt;li>💬 &lt;a href="https://discord.gg/z8wNYzb" target="_blank" rel="noopener">Chat with the &lt;strong>Wowchemy community&lt;/strong>&lt;/a> or &lt;a href="https://discourse.gohugo.io" target="_blank" rel="noopener">&lt;strong>Hugo community&lt;/strong>&lt;/a>&lt;/li>
-&lt;li>🐦 Twitter: &lt;a href="https://twitter.com/wowchemy" target="_blank" rel="noopener">@wowchemy&lt;/a> &lt;a href="https://twitter.com/GeorgeCushen" target="_blank" rel="noopener">@GeorgeCushen&lt;/a> &lt;a href="https://twitter.com/search?q=%28%23MadeWithWowchemy%20OR%20%23MadeWithAcademic%29&amp;amp;src=typed_query" target="_blank" rel="noopener">#MadeWithWowchemy&lt;/a>&lt;/li>
-&lt;li>💡 &lt;a href="https://github.com/wowchemy/wowchemy-hugo-modules/issues" target="_blank" rel="noopener">Request a &lt;strong>feature&lt;/strong> or report a &lt;strong>bug&lt;/strong> for &lt;em>Wowchemy&lt;/em>&lt;/a>&lt;/li>
-&lt;li>⬆️ &lt;strong>Updating Wowchemy?&lt;/strong> View the &lt;a href="https://wowchemy.com/docs/guide/update/" target="_blank" rel="noopener">Update Guide&lt;/a> and &lt;a href="https://wowchemy.com/updates/" target="_blank" rel="noopener">Release Notes&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h2 id="crowd-funded-open-source-software">Crowd-funded open-source software&lt;/h2>
-&lt;p>To help us develop this template and software sustainably under the MIT license, we ask all individuals and businesses that use it to help support its ongoing maintenance and development via sponsorship.&lt;/p>
-&lt;h3 id="-click-here-to-become-a-sponsor-and-help-support-wowchemys-future-httpswowchemycomplans">&lt;a href="https://wowchemy.com/plans/" target="_blank" rel="noopener">❤️ Click here to become a sponsor and help support Wowchemy&amp;rsquo;s future ❤️&lt;/a>&lt;/h3>
-&lt;p>As a token of appreciation for sponsoring, you can &lt;strong>unlock &lt;a href="https://wowchemy.com/plans/" target="_blank" rel="noopener">these&lt;/a> awesome rewards and extra features 🦄✨&lt;/strong>&lt;/p>
-&lt;h2 id="ecosystem">Ecosystem&lt;/h2>
-&lt;ul>
-&lt;li>&lt;strong>&lt;a href="https://github.com/wowchemy/hugo-academic-cli" target="_blank" rel="noopener">Hugo Academic CLI&lt;/a>:&lt;/strong> Automatically import publications from BibTeX&lt;/li>
-&lt;/ul>
-&lt;h2 id="inspiration">Inspiration&lt;/h2>
-&lt;p>&lt;a href="https://academic-demo.netlify.com/" target="_blank" rel="noopener">Check out the latest &lt;strong>demo&lt;/strong>&lt;/a> of what you&amp;rsquo;ll get in less than 10 minutes, or &lt;a href="https://wowchemy.com/user-stories/" target="_blank" rel="noopener">view the &lt;strong>showcase&lt;/strong>&lt;/a> of personal, project, and business sites.&lt;/p>
-&lt;h2 id="features">Features&lt;/h2>
-&lt;ul>
-&lt;li>&lt;strong>Page builder&lt;/strong> - Create &lt;em>anything&lt;/em> with &lt;a href="https://wowchemy.com/docs/page-builder/" target="_blank" rel="noopener">&lt;strong>widgets&lt;/strong>&lt;/a> and &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">&lt;strong>elements&lt;/strong>&lt;/a>&lt;/li>
-&lt;li>&lt;strong>Edit any type of content&lt;/strong> - Blog posts, publications, talks, slides, projects, and more!&lt;/li>
-&lt;li>&lt;strong>Create content&lt;/strong> in &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">&lt;strong>Markdown&lt;/strong>&lt;/a>, &lt;a href="https://wowchemy.com/docs/import/jupyter/" target="_blank" rel="noopener">&lt;strong>Jupyter&lt;/strong>&lt;/a>, or &lt;a href="https://wowchemy.com/docs/install-locally/" target="_blank" rel="noopener">&lt;strong>RStudio&lt;/strong>&lt;/a>&lt;/li>
-&lt;li>&lt;strong>Plugin System&lt;/strong> - Fully customizable &lt;a href="https://wowchemy.com/docs/customization/" target="_blank" rel="noopener">&lt;strong>color&lt;/strong> and &lt;strong>font themes&lt;/strong>&lt;/a>&lt;/li>
-&lt;li>&lt;strong>Display Code and Math&lt;/strong> - Code highlighting and &lt;a href="https://en.wikibooks.org/wiki/LaTeX/Mathematics" target="_blank" rel="noopener">LaTeX math&lt;/a> supported&lt;/li>
-&lt;li>&lt;strong>Integrations&lt;/strong> - &lt;a href="https://analytics.google.com" target="_blank" rel="noopener">Google Analytics&lt;/a>, &lt;a href="https://disqus.com" target="_blank" rel="noopener">Disqus commenting&lt;/a>, Maps, Contact Forms, and more!&lt;/li>
-&lt;li>&lt;strong>Beautiful Site&lt;/strong> - Simple and refreshing one page design&lt;/li>
-&lt;li>&lt;strong>Industry-Leading SEO&lt;/strong> - Help get your website found on search engines and social media&lt;/li>
-&lt;li>&lt;strong>Media Galleries&lt;/strong> - Display your images and videos with captions in a customizable gallery&lt;/li>
-&lt;li>&lt;strong>Mobile Friendly&lt;/strong> - Look amazing on every screen with a mobile friendly version of your site&lt;/li>
-&lt;li>&lt;strong>Multi-language&lt;/strong> - 34+ language packs including English, 中文, and Português&lt;/li>
-&lt;li>&lt;strong>Multi-user&lt;/strong> - Each author gets their own profile page&lt;/li>
-&lt;li>&lt;strong>Privacy Pack&lt;/strong> - Assists with GDPR&lt;/li>
-&lt;li>&lt;strong>Stand Out&lt;/strong> - Bring your site to life with animation, parallax backgrounds, and scroll effects&lt;/li>
-&lt;li>&lt;strong>One-Click Deployment&lt;/strong> - No servers. No databases. Only files.&lt;/li>
-&lt;/ul>
-&lt;h2 id="themes">Themes&lt;/h2>
-&lt;p>Wowchemy and its templates come with &lt;strong>automatic day (light) and night (dark) mode&lt;/strong> built-in. Alternatively, visitors can choose their preferred mode - click the moon icon in the top right of the &lt;a href="https://academic-demo.netlify.com/" target="_blank" rel="noopener">Demo&lt;/a> to see it in action! Day/night mode can also be disabled by the site admin in &lt;code>params.toml&lt;/code>.&lt;/p>
-&lt;p>&lt;a href="https://wowchemy.com/docs/customization" target="_blank" rel="noopener">Choose a stunning &lt;strong>theme&lt;/strong> and &lt;strong>font&lt;/strong>&lt;/a> for your site. Themes are fully customizable.&lt;/p>
-&lt;h2 id="license">License&lt;/h2>
-&lt;p>Copyright 2016-present &lt;a href="https://georgecushen.com" target="_blank" rel="noopener">George Cushen&lt;/a>.&lt;/p>
-&lt;p>Released under the &lt;a href="https://github.com/wowchemy/wowchemy-hugo-modules/blob/master/LICENSE.md" target="_blank" rel="noopener">MIT&lt;/a> license.&lt;/p></description></item><item><title>SliveredChain: A Storage Optimized Private Blockchain</title><link>https://mahbub-hr.github.io/project/sliveredchain-a-storage-optimized-blockchain/</link><pubDate>Sat, 21 Nov 2020 13:15:46 +0000</pubDate><guid>https://mahbub-hr.github.io/project/sliveredchain-a-storage-optimized-blockchain/</guid><description>&lt;!--StartFragment-->
+&lt;!--EndFragment--></description></item><item><title>SliveredChain: A Storage Optimized Private Blockchain</title><link>https://mahbub-hr.github.io/project/sliveredchain-a-storage-optimized-blockchain/</link><pubDate>Sat, 21 Nov 2020 13:15:46 +0000</pubDate><guid>https://mahbub-hr.github.io/project/sliveredchain-a-storage-optimized-blockchain/</guid><description>&lt;!--StartFragment-->
 &lt;p>I completed this project as a part of my undergraduate thesis. This project aims to optimize storage usage of a &lt;a href="https://www.investopedia.com/news/public-private-permissioned-blockchains-compared/#toc-private-blockchain" target="_blank" rel="noopener">Private Blockchain&lt;/a> system. Typically, each node in the system stores whole blockchain. This consumes a lot of storage. In my thesis, I propose to only store a part of the chain in each node. &lt;!-- This means the number of copies of the chain in the system is equal to the number of nodes present in the system. --> This is done by carefully dividing the chain and distributing the pieces to each peer. As a proof of concept, I implemented this proposal in &lt;a href="https://flask.palletsprojects.com/en/2.2.x/" target="_blank" rel="noopener">Flask&lt;/a> framework. Our experimental evaluation shows SliveredChain can reduce the required storage by 66.67%. Our method scales very well with the number of nodes in the network.&lt;/p>
-&lt;!--EndFragment--></description></item><item><title>Slides</title><link>https://mahbub-hr.github.io/slides/example/</link><pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate><guid>https://mahbub-hr.github.io/slides/example/</guid><description>&lt;h1 id="create-slides-in-markdown-with-wowchemy">Create slides in Markdown with Wowchemy&lt;/h1>
-&lt;p>&lt;a href="https://wowchemy.com/" target="_blank" rel="noopener">Wowchemy&lt;/a> | &lt;a href="https://owchemy.com/docs/managing-content/#create-slides" target="_blank" rel="noopener">Documentation&lt;/a>&lt;/p>
-&lt;hr>
-&lt;h2 id="features">Features&lt;/h2>
-&lt;ul>
-&lt;li>Efficiently write slides in Markdown&lt;/li>
-&lt;li>3-in-1: Create, Present, and Publish your slides&lt;/li>
-&lt;li>Supports speaker notes&lt;/li>
-&lt;li>Mobile friendly slides&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h2 id="controls">Controls&lt;/h2>
-&lt;ul>
-&lt;li>Next: &lt;code>Right Arrow&lt;/code> or &lt;code>Space&lt;/code>&lt;/li>
-&lt;li>Previous: &lt;code>Left Arrow&lt;/code>&lt;/li>
-&lt;li>Start: &lt;code>Home&lt;/code>&lt;/li>
-&lt;li>Finish: &lt;code>End&lt;/code>&lt;/li>
-&lt;li>Overview: &lt;code>Esc&lt;/code>&lt;/li>
-&lt;li>Speaker notes: &lt;code>S&lt;/code>&lt;/li>
-&lt;li>Fullscreen: &lt;code>F&lt;/code>&lt;/li>
-&lt;li>Zoom: &lt;code>Alt + Click&lt;/code>&lt;/li>
-&lt;li>&lt;a href="https://github.com/hakimel/reveal.js#pdf-export" target="_blank" rel="noopener">PDF Export&lt;/a>: &lt;code>E&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h2 id="code-highlighting">Code Highlighting&lt;/h2>
-&lt;p>Inline code: &lt;code>variable&lt;/code>&lt;/p>
-&lt;p>Code block:&lt;/p>
-&lt;pre>&lt;code class="language-python">porridge = &amp;quot;blueberry&amp;quot;
-if porridge == &amp;quot;blueberry&amp;quot;:
-print(&amp;quot;Eating...&amp;quot;)
-&lt;/code>&lt;/pre>
-&lt;hr>
-&lt;h2 id="math">Math&lt;/h2>
-&lt;p>In-line math: $x + y = z$&lt;/p>
-&lt;p>Block math:&lt;/p>
-&lt;p>$$
-f\left( x \right) = ;\frac{{2\left( {x + 4} \right)\left( {x - 4} \right)}}{{\left( {x + 4} \right)\left( {x + 1} \right)}}
-$$&lt;/p>
-&lt;hr>
-&lt;h2 id="fragments">Fragments&lt;/h2>
-&lt;p>Make content appear incrementally&lt;/p>
-&lt;pre>&lt;code>{{% fragment %}} One {{% /fragment %}}
-{{% fragment %}} **Two** {{% /fragment %}}
-{{% fragment %}} Three {{% /fragment %}}
-&lt;/code>&lt;/pre>
-&lt;p>Press &lt;code>Space&lt;/code> to play!&lt;/p>
-&lt;p>&lt;span class="fragment " >
-One
-&lt;/span>
-&lt;span class="fragment " >
-&lt;strong>Two&lt;/strong>
-&lt;/span>
-&lt;span class="fragment " >
-Three
-&lt;/span>&lt;/p>
-&lt;hr>
-&lt;p>A fragment can accept two optional parameters:&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>class&lt;/code>: use a custom style (requires definition in custom CSS)&lt;/li>
-&lt;li>&lt;code>weight&lt;/code>: sets the order in which a fragment appears&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h2 id="speaker-notes">Speaker Notes&lt;/h2>
-&lt;p>Add speaker notes to your presentation&lt;/p>
-&lt;pre>&lt;code class="language-markdown">{{% speaker_note %}}
-- Only the speaker can read these notes
-- Press `S` key to view
-{{% /speaker_note %}}
-&lt;/code>&lt;/pre>
-&lt;p>Press the &lt;code>S&lt;/code> key to view the speaker notes!&lt;/p>
-&lt;aside class="notes">
-&lt;ul>
-&lt;li>Only the speaker can read these notes&lt;/li>
-&lt;li>Press &lt;code>S&lt;/code> key to view&lt;/li>
-&lt;/ul>
-&lt;/aside>
-&lt;hr>
-&lt;h2 id="themes">Themes&lt;/h2>
-&lt;ul>
-&lt;li>black: Black background, white text, blue links (default)&lt;/li>
-&lt;li>white: White background, black text, blue links&lt;/li>
-&lt;li>league: Gray background, white text, blue links&lt;/li>
-&lt;li>beige: Beige background, dark text, brown links&lt;/li>
-&lt;li>sky: Blue background, thin dark text, blue links&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;ul>
-&lt;li>night: Black background, thick white text, orange links&lt;/li>
-&lt;li>serif: Cappuccino background, gray text, brown links&lt;/li>
-&lt;li>simple: White background, black text, blue links&lt;/li>
-&lt;li>solarized: Cream-colored background, dark green text, blue links&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;section data-noprocess data-shortcode-slide
-data-background-image="/media/boards.jpg"
->
-&lt;h2 id="custom-slide">Custom Slide&lt;/h2>
-&lt;p>Customize the slide style and background&lt;/p>
-&lt;pre>&lt;code class="language-markdown">{{&amp;lt; slide background-image=&amp;quot;/media/boards.jpg&amp;quot; &amp;gt;}}
-{{&amp;lt; slide background-color=&amp;quot;#0000FF&amp;quot; &amp;gt;}}
-{{&amp;lt; slide class=&amp;quot;my-style&amp;quot; &amp;gt;}}
-&lt;/code>&lt;/pre>
-&lt;hr>
-&lt;h2 id="custom-css-example">Custom CSS Example&lt;/h2>
-&lt;p>Let&amp;rsquo;s make headers navy colored.&lt;/p>
-&lt;p>Create &lt;code>assets/css/reveal_custom.css&lt;/code> with:&lt;/p>
-&lt;pre>&lt;code class="language-css">.reveal section h1,
-.reveal section h2,
-.reveal section h3 {
-color: navy;
-}
-&lt;/code>&lt;/pre>
-&lt;hr>
-&lt;h1 id="questions">Questions?&lt;/h1>
-&lt;p>&lt;a href="https://github.com/wowchemy/wowchemy-hugo-modules/discussions" target="_blank" rel="noopener">Ask&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://wowchemy.com/docs/managing-content/#create-slides" target="_blank" rel="noopener">Documentation&lt;/a>&lt;/p></description></item><item><title>Example Project</title><link>https://mahbub-hr.github.io/project/example/</link><pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate><guid>https://mahbub-hr.github.io/project/example/</guid><description>&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p>
-&lt;p>Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p>
-&lt;p>Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p>
-&lt;p>Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p>
-&lt;p>Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p></description></item><item><title>An example conference paper</title><link>https://mahbub-hr.github.io/publication/example/</link><pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate><guid>https://mahbub-hr.github.io/publication/example/</guid><description>&lt;div class="alert alert-note">
-&lt;div>
-Click the &lt;em>Cite&lt;/em> button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-&lt;/div>
-&lt;/div>
-&lt;div class="alert alert-note">
-&lt;div>
-Create your slides in Markdown - click the &lt;em>Slides&lt;/em> button to check out the example.
-&lt;/div>
-&lt;/div>
-&lt;p>Supplementary notes can be added here, including &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">code, math, and images&lt;/a>.&lt;/p></description></item><item><title/><link>https://mahbub-hr.github.io/admin/config.yml</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mahbub-hr.github.io/admin/config.yml</guid><description/></item></channel></rss>
+&lt;!--EndFragment--></description></item><item><title/><link>https://mahbub-hr.github.io/admin/config.yml</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mahbub-hr.github.io/admin/config.yml</guid><description/></item></channel></rss>

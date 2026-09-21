@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Architecture | Mahbub H. Raton</title><link>https://mahbub-hr.github.io/tag/architecture/</link><atom:link href="https://mahbub-hr.github.io/tag/architecture/index.xml" rel="self" type="application/rss+xml"/><description>Architecture</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2026 Mahbub H. Raton</copyright><lastBuildDate>Fri, 01 Aug 2025 00:00:00 +0000</lastBuildDate><image><url>https://mahbub-hr.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url><title>Architecture</title><link>https://mahbub-hr.github.io/tag/architecture/</link></image><item><title>AEGIS: An LLVM Pass for Hardware Reliability</title><link>https://mahbub-hr.github.io/project/aegis-llvm-compiler-pass-for-hardware-reliability/</link><pubDate>Fri, 01 Aug 2025 00:00:00 +0000</pubDate><guid>https://mahbub-hr.github.io/project/aegis-llvm-compiler-pass-for-hardware-reliability/</guid><description>&lt;p>Transient hardware faults — a bit flipped in a cache line or a register by a stray particle or a marginal voltage — do not announce themselves. The machine keeps running and quietly produces the wrong answer. AEGIS is an LLVM pass that makes a program check its own arithmetic, so that a corrupted value is caught before it can escape.&lt;/p>
+&lt;p>The pass implements &lt;strong>Error Detection by Duplicated Instructions (EDDI)&lt;/strong>. It duplicates global, stack, and heap values and compares the two copies at the points where a wrong value would become observable: before a store, before a branch, and before a function call. Getting this to work on real programs meant more than duplicating instructions:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Call boundaries.&lt;/strong> Call sites are rewritten to pass shadow arguments and retrieve shadow return values, so duplication survives across function calls rather than stopping at each one.&lt;/li>
+&lt;li>&lt;strong>Pointer sizes.&lt;/strong> Knowing how much memory to duplicate behind a pointer is not something the IR tells you. The pass recovers it from DWARF debug metadata, falling back to a signature table for library calls.&lt;/li>
+&lt;li>&lt;strong>Extensibility.&lt;/strong> Hardening schemes are registered through a strategy registry, so adding a new one is a single self-registering file rather than an edit threaded through the pass.&lt;/li>
+&lt;li>&lt;strong>Testing.&lt;/strong> A regression suite validates both that the transformation is correct and that fault-detection coverage holds across the benchmark suite.&lt;/li>
+&lt;/ul>
+&lt;p>Measured against L1 cache fault injection, AEGIS reduces silent data corruption by &lt;strong>1.3× to 29×&lt;/strong> across &lt;code>qsort&lt;/code>, &lt;code>matmul&lt;/code>, and &lt;code>CRC32&lt;/code>, at a runtime cost of 1.6× to 3.0×.&lt;/p>
+&lt;p>&lt;em>Built with C++, LLVM, Clang, and CMake.&lt;/em>&lt;/p></description></item><item><title>Architectural Fault Injection Framework</title><link>https://mahbub-hr.github.io/project/architectural-fault-injection-framework/</link><pubDate>Fri, 01 Aug 2025 00:00:00 +0000</pubDate><guid>https://mahbub-hr.github.io/project/architectural-fault-injection-framework/</guid><description>&lt;p>You cannot argue about how much a reliability technique helps without measuring how often things actually go wrong. This framework extends the gem5 simulator to inject faults into the register file and the L1 cache, and pinpoints the first instruction that reads corrupted data — at under &lt;strong>0.1% simulation overhead&lt;/strong>.&lt;/p>
+&lt;p>The harder half of the problem is statistical. A single injection tells you nothing; useful confidence intervals need hundreds of thousands of runs. The Python automation layer around gem5 makes that tractable:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Checkpointing and parallelism.&lt;/strong> Simulations resume from gem5 checkpoints and are distributed across multiple machines. A 600,000-injection campaign across three benchmarks went from &lt;strong>7 days to under 24 hours&lt;/strong>.&lt;/li>
+&lt;li>&lt;strong>Outcome classification.&lt;/strong> Each run is automatically classified as silent data corruption, masked, detected, crash, or timeout, and reported with 99% confidence margins.&lt;/li>
+&lt;li>&lt;strong>Root-cause analysis.&lt;/strong> When an injection produces a wrong result, the harness diffs execution traces to find where the corrupted value first diverged.&lt;/li>
+&lt;/ul>
+&lt;p>This is the measurement apparatus behind the &lt;a href="../aegis-llvm-compiler-pass-for-hardware-reliability/">AEGIS&lt;/a> numbers.&lt;/p>
+&lt;p>&lt;em>Built with C++, Python, gem5, Docker, and Linux.&lt;/em>&lt;/p></description></item><item><title>Cross-Compiling x86 Binaries to ARM</title><link>https://mahbub-hr.github.io/project/cross-compiling-x86-binaries-to-arm/</link><pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate><guid>https://mahbub-hr.github.io/project/cross-compiling-x86-binaries-to-arm/</guid><description>&lt;p>Moving a program to a new instruction set architecture is straightforward when you have the source. When you do not, you have to reconstruct enough of the program&amp;rsquo;s meaning from the binary itself to emit correct code for a different machine.&lt;/p>
+&lt;p>This project extended &lt;a href="https://github.com/trailofbits/binrec-tob" target="_blank" rel="noopener">Binrec&lt;/a> — a dynamic binary lifting framework that recovers LLVM IR by observing concrete executions — to target AArch64 from x86 input. The work centered on two things:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Adapting the lifting pipeline.&lt;/strong> Binrec&amp;rsquo;s dynamic execution and IR recovery stages assumed an x86 target throughout; retargeting them meant separating what was genuinely architecture-neutral in the recovered IR from what had quietly encoded x86 assumptions.&lt;/li>
+&lt;li>&lt;strong>A translation layer for library calls.&lt;/strong> Calls out to the C library cross the boundary where the two calling conventions disagree. An x64-to-AArch64 shim translates arguments and return values at that boundary.&lt;/li>
+&lt;/ul>
+&lt;p>The result runs two real-world SPEC CPU 2017 programs, &lt;code>mcf&lt;/code> and &lt;code>xalancbmk&lt;/code>, correctly on ARM, at roughly &lt;strong>6× slowdown relative to native&lt;/strong>.&lt;/p>
+&lt;p>A manuscript on the architectural mismatches this work surfaced is in preparation.&lt;/p>
+&lt;p>&lt;em>Built with LLVM, C++, S2E, and x86/ARM assembly.&lt;/em>&lt;/p></description></item><item><title>MIPS 4 Bit Processor Design</title><link>https://mahbub-hr.github.io/project/mips-4-bit-processor-design-in-logisim/</link><pubDate>Mon, 21 Dec 2020 13:15:46 +0000</pubDate><guid>https://mahbub-hr.github.io/project/mips-4-bit-processor-design-in-logisim/</guid><description>&lt;!--StartFragment-->
+&lt;p>A MIPS processor that can do 4-bit operations. This processor was designed to do these 12 operations:&lt;/p>
+&lt;ol>
+&lt;li>Addition(add)&lt;/li>
+&lt;li>Subtraction(sub)&lt;/li>
+&lt;li>Add immediate(addi)&lt;/li>
+&lt;li>Subtract immediate(subi)&lt;/li>
+&lt;li>Logical OR(or)&lt;/li>
+&lt;li>OR immediate(ori)&lt;/li>
+&lt;li>Logical AND(and)&lt;/li>
+&lt;li>AND immediate(ori)&lt;/li>
+&lt;li>Branch Equal(beq)&lt;/li>
+&lt;li>Jump(j)&lt;/li>
+&lt;li>Load from memory(lw)&lt;/li>
+&lt;li>Store into memory(sw)&lt;/li>
+&lt;/ol>
+&lt;p>The design was implemented and validated in logisim simulator. The ciruite design file along with a sample instruction file can be found in the &lt;a href="https://github.com/mahbub-hr/mips-4-bit-processor" target="_blank" rel="noopener">code repository&lt;/a>.&lt;/p>
+&lt;!--EndFragment--></description></item></channel></rss>
