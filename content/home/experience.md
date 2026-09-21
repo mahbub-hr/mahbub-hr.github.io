@@ -21,50 +21,57 @@ date_format: Jan 2006
 #   Required fields are `title`, `company`, and `date_start`.
 #   Leave `date_end` empty if it's your current employer.
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
-experience:      
-  - title: Lecturer of Computer Science and Engineering
-    company: United International University
-    company_url: ''
-    company_logo: org-uiu
-    location: United City, Madani Ave, Dhaka 1212
-    date_start: '2022-03-01'
+experience:
+  - title: Graduate Research Assistant
+    company: Secure Systems and Software Lab, University of California, Irvine
+    company_url: 'https://ssllab.org/'
+    company_logo: ''
+    location: Irvine, California
+    date_start: '2023-09-01'
     date_end: ''
     description: |
-      Recently taught courses:
+      Doctoral research in compilers, computer architecture, and systems reliability, advised by Prof. Michael Franz.
 
-      * Object Oriented Programming(CSE 1115)
-      * Object Oriented Programming Lab(CSE 1116)
-      * Discrete Mathmatics (CSE 2213)
-      * Computer Network Lab (CSI 324)
+      * Compiler-assisted detection of transient hardware errors via LLVM transformation passes.
+      * Architectural fault injection in gem5 to quantify silent data corruption.
+      * Cross-architecture (x86-to-AArch64) binary translation.
 
-  - title: Backend Java Developer(Part-Time)
-    company: Integrated Education Information Management System, BUET
-    company_url: ''
+  - title: Graduate Teaching Assistant
+    company: University of California, Irvine
+    company_url: 'https://uci.edu/'
     company_logo: ''
-    location: Dhaka
-    date_start: '2022-03-01'
+    location: Irvine, California
+    date_start: '2023-09-01'
     date_end: ''
-    description: |2-
-        Responsibilities include:
-        
-        * Code Review
-        * Experimenting new tools and technolgies.
-        * Deploying
+    description: |
+      Mentored 300+ students across 6 CS courses. Assisted instructors with grading and question design.
 
-  - title: Backend Java Developer
-    company: Integrated Education Information Management System, BUET
+  - title: Lecturer in Computer Science
+    company: United International University
+    company_url: 'https://www.uiu.ac.bd/'
+    company_logo: org-uiu
+    location: United City, Madani Ave, Dhaka 1212
+    date_start: '2021-12-01'
+    date_end: '2023-07-01'
+    description: |
+      * Delivered lectures for Object Oriented Programming and Pattern Recognition (average class size: 45).
+      * Co-advised senior thesis projects on Data Mining.
+      * Collaborated on syllabus modernization.
+
+  - title: Software Developer
+    company: Banbeis, Ministry of Education
     company_url: ''
     company_logo: ''
-    location: Dhaka
-    date_start: '2021-03-15'
-    date_end: '2022-03-01'
-    description: |2-
-        Responsibilities include:
-        
-        * Designing and Coding REST API
-        * Securing APIs using Spring Security module
-        * Implementing single sign-on using Keycloak
-        * Deploying
+    location: Dhaka, Bangladesh
+    date_start: '2021-03-01'
+    date_end: '2021-12-01'
+    description: |
+      Engineered the backend of a nationwide high school admission system serving 1.3 million applicants across 4 education boards.
+
+      * Built the Spring Boot and Laravel services behind the production admission workflow.
+      * Designed the schema and SQL Server stored procedures for post-deadline merit ranking and school migrations.
+      * Diagnosed a `GC overhead limit exceeded` OutOfMemoryError in the 1.3M-applicant ranking query, resolving it by replacing entity-based retrieval with the JDBC API.
+      * Exposed data via REST APIs secured with Keycloak (OAuth2), deployed through Jenkins CI/CD pipelines.
 
 design:
   columns: '2'

@@ -1,0 +1,250 @@
+%-------------------------
+% Resume in Latex
+% Author : Mahbub H. Raton (Tailored for Google Student Researcher, PhD)
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%
+
+\begin{document}
+
+%----------HEADER----------
+\begin{center}
+    \textbf{\Huge \scshape Mahbub H. Raton} \\ \vspace{1pt}
+    Irvine, CA $|$ \small (626) 600-1051 $|$ \href{mailto:mahbub.mmhr@gmail.com}{\underline{mahbub.mmhr@gmail.com}} $|$
+    \href{https://www.linkedin.com/in/m-mahbub-hossain}{\underline{linkedin.com/in/m-mahbub-hossain}} $|$
+    \href{https://github.com/mahbub-hr}{\underline{github.com/mahbub-hr}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of California, Irvine}{Irvine, CA}
+      {PhD in Computer Science}{Expected graduation: 04/28}
+      \resumeItemListStart
+        \resumeItem{\textbf{Advisor:} Prof. Michael Franz, Secure Systems and Software Lab.}
+        \resumeItem{\textbf{Focus:} Compilers and computer architecture: compiler-assisted detection of transient hardware errors via LLVM transformation passes, and cross-architecture (x86-to-AArch64) binary translation.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {University of California, Irvine}{Irvine, CA}
+      {Master of Science in Computer Science (en route to PhD)}{Conferred: 06/26}
+    \resumeSubheading
+      {Bangladesh University of Engineering \& Technology}{Dhaka, Bangladesh}
+      {Bachelor of Science in Computer Science \& Engineering (GPA: 3.71)}{Conferred: 02/21}
+  \resumeSubHeadingListEnd
+
+
+%-----------RESEARCH EXPERIENCE-----------
+\section{Research Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {University of California, Irvine}{Irvine, CA}
+      {Graduate Research Assistant --- Secure Systems and Software Lab (Advisor: Prof. Michael Franz)}{Sep 2023 -- Present}
+      \resumeItemListStart
+        \resumeItem{Doctoral research in compilers, computer architecture, and systems reliability, developing solutions for real-world, large-scale systems-reliability problems (LLVM, gem5).}
+      \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{AEGIS: LLVM Compiler Pass for Hardware Reliability} $|$ \emph{C++, LLVM, Clang, CMake}} {Aug 2025 -- Present}
+      \resumeItemListStart
+        \resumeItem{Implemented Error Detection by Duplicated Instructions (EDDI) as an LLVM pass that duplicates global, stack, and heap values and compares them before stores, branches, and function calls to detect corruption.}
+        \resumeItem{Modified function call sites to pass shadow arguments and retrieve shadow return values; resolved pointer sizes via DWARF debug metadata and a library signature table.}
+        \resumeItem{Designed an extensible strategy registry (software design for maintainability); adding a new hardening scheme requires a single self-registering file.}
+        \resumeItem{Wrote regression tests validating pass correctness and fault-detection coverage across the benchmark suite.}
+        \resumeItem{Reduced silent data corruption by 1.3$\times$--29$\times$ across \texttt{qsort}, \texttt{matmul}, and \texttt{CRC32} benchmarks under L1 cache fault injection. Runtime performance overhead stayed at 1.6$\times$--3.0$\times$.}
+      \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Architectural Fault Injection Framework} $|$ \emph{C++, Python, gem5, Docker, Linux}} {Aug 2025 -- Present}
+      \resumeItemListStart
+        \resumeItem{Developed Python scripts to automate a large-scale fault-injection campaign, using gem5 checkpointing and distributed multi-machine parallelization; accelerated a 600K-injection campaign across three benchmarks from 7 days to under 24 hours.}
+        \resumeItem{Added register-file and L1 cache fault injection to gem5 in C++, pinpointing the first instruction that reads corrupted data at under 0.1\% simulation overhead.}
+        \resumeItem{Automation harness runs injections in parallel and classifies outcomes (SDC, masked, detected, crash, timeout) with 99\% confidence margins; finds root cause by diffing execution traces.}
+        \resumeItem{\textbf{Source:} \href{https://github.com/mahbub-hr/gem5.git}{\underline{github.com/mahbub-hr/gem5}}}
+      \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Cross-Compiling x86 Binaries to ARM} $|$ \emph{LLVM, C++, S2E, x86/ARM Assembly}}{Jun 2024 -- Jun 2025}
+          \resumeItemListStart
+            \resumeItem{Extended the \href{https://github.com/trailofbits/binrec-tob}{\underline{Binrec}} framework to enable x86-to-ARM binary translation by adapting its dynamic execution and LLVM IR lifting pipeline.}
+            \resumeItem{Implemented an x64-to-AArch64 translation layer for library calls; validated correct execution on two real-world SPEC CPU 2017 programs, \texttt{mcf} and \texttt{xalancbmk} (6$\times$ slowdown relative to native).}
+          \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PUBLICATIONS & SERVICE-----------
+\section{Publications \& Research Community Service}
+  \resumeSubHeadingListStart
+    \resumeItem{\textbf{Research Manuscripts:} \textbf{M. H. Raton}, M. Franz. \emph{``Architectural Hurdles: Exploring the Difficulties of x86-to-ARM Binary Cross-Compilation''} (Manuscript in Preparation).}
+    \resumeItem{\textbf{M. H. Raton}, A. Abdullah. \emph{``SliveredChain: Reducing Storage in Private Blockchain Systems''} (Undergraduate Thesis; BFT consensus over a sharded design, reducing storage by 60\%).}
+    \resumeItem{\textbf{Research Community Service:} Artifact Evaluation Committee: EuroSys 2026, PACT 2026. Reviewer: IEEE ICMLA 2024, ACM SAC 2026.}
+  \resumeSubHeadingListEnd
+
+
+%-----------SELECTED PROJECTS-----------
+\section{Selected Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{IR-Sentinel: LLVM-IR Security Analysis via MCP} $|$ \emph{Python, LLVM, Gemini, FastMCP}}{Feb 2026}
+          \resumeItemListStart
+            \resumeItem{Developed a proof-of-concept \textbf{Model Context Protocol (MCP)} server (\texttt{FastMCP}) exposing local LLVM toolchains (\texttt{clang}, \texttt{opt}) to AI agents.}
+            \resumeItem{The agent pipeline compiles C++ to \textbf{LLVM IR}, extracts \textbf{CFG} metrics, and iteratively queries \textbf{Gemini} to identify Use-After-Free vulnerability patterns.}
+            \resumeItem{\textbf{Source:} \href{https://github.com/mahbub-hr/ir-sentinel.git}{\underline{github.com/mahbub-hr/ir-sentinel}}}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{WARIR: Wasm Optimizer Compiler} (graduate compiler course project) $|$ \emph{Python, Node.js, WebAssembly}}{Jan 2024 -- Jun 2024}
+          \resumeItemListStart
+            \resumeItem{Implemented \textbf{graph-coloring register allocation} and \textbf{SSA-based dataflow analysis} (Common Subexpression Elimination, Copy Propagation) as part of a full compiler pipeline (SMPL-to-WebAssembly).}
+            \resumeItem{\textbf{Source:} \href{https://github.com/mahbub-hr/compiler_cs241/tree/main/Project3}{\underline{github.com/mahbub-hr/compiler\_cs241}}}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+%-----------TEACHING & INDUSTRY EXPERIENCE-----------
+\section{Teaching \& Industry Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {University of California, Irvine}{Irvine, CA}
+      {Graduate Teaching Assistant}{Sep 2023 -- Present}
+      \resumeItemListStart
+        \resumeItem{Mentored 300+ students across 6 CS courses. Assisted instructors with grading and question design.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {United International University}{Dhaka, Bangladesh}
+      {Lecturer in Computer Science}{Dec 2021 -- Jul 2023}
+      \resumeItemListStart
+        \resumeItem{Delivered lectures for ``Object Oriented Programming'' and ``Pattern Recognition'' (Avg class size: 45).}
+        \resumeItem{Co-advised senior thesis projects on Data Mining and collaborated on syllabus modernization.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Banbeis (Ministry of Education)}{Dhaka, Bangladesh}
+      {Software Developer}{Mar 2021 -- Dec 2021}
+      \resumeItemListStart
+        \resumeItem{Engineered the backend (\textbf{Spring Boot}, \textbf{Laravel}) for a nationwide production high school admission system (CAD) serving \textbf{1.3 million} student applicants across 4 education boards.}
+        \resumeItem{Designed the schema and wrote the SQL Server stored procedures for post-deadline merit ranking and school migrations across 4 education boards.}
+        \resumeItem{Diagnosed a \texttt{GC overhead limit exceeded} OutOfMemoryError in the 1.3M-applicant ranking query executed via Spring Data; resolved it by replacing entity-based retrieval with the JDBC API.}
+        \resumeItem{Collaborated within a 5-person engineering team and with cross-functional module teams to expose data via REST APIs secured with Keycloak (OAuth2); deployed through Jenkins CI/CD pipelines and participated in deployment planning meetings.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Programming}{: C, C++ (LLVM Pass Dev), Python (Advanced), Java, JavaScript, x86 \& ARM Assembly, CUDA, Shell Scripting.} \\
+     \textbf{Compilers \& Architecture}{: LLVM Framework, Gem5, GDB, SVF (Static Value Flow), Control Flow Graphs (CFG).} \\
+     \textbf{Data Structures, Algorithms \& Software Design}{: Graph Algorithms, Register Allocation, SSA-Based Dataflow Analysis, Merkle Trees, Distributed Systems (BFT, Paxos Consensus, Sharding).} \\
+     \textbf{Backend \& DB}{: Flask, Node.js, SQL (MySQL/SQLite/SQL Server), REST APIs, Keycloak (OAuth2/OIDC).} \\
+     \textbf{AI Systems \& Tooling}{: Model Context Protocol (MCP), Google GenAI (Gemini), OpenAI API.} \\
+     \textbf{DevOps \& Tools}{: Git, GitHub, Docker, Jenkins (CI/CD), JIRA.}
+    }}
+ \end{itemize}
+
+
+%-----------AWARDS-----------
+\section{Awards}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Dean's Fellowship:} UC Irvine (2024-2025). \\
+     \textbf{Dean's List \& Merit Scholarship:} BUET (2016-2020).
+    }}
+ \end{itemize}
+
+%-------------------------------------------
+\end{document}

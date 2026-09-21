@@ -1,6 +1,6 @@
 ---
 # An instance of the Contact widget.
-# Documentation: https://sourcethemes.com/academic/docs/page-builder/
+# Documentation: https://wowchemy.com/docs/page-builder/
 widget: contact
 
 # This file represents a page section.
@@ -15,24 +15,17 @@ subtitle:
 content:
   # Automatically link email and phone or display as text?
   autolink: true
-  
-  # Email form provider
-  form:
-    provider: netlify
-    formspree:
-      id:
-    netlify:
-      # Enable CAPTCHA challenge to reduce spam?
-      captcha: true
+
+  email: mahbub.mmhr@gmail.com
 
   address:
-    street: United City, Madani Ave 
-    city: Dhaka
-    region: Dhaka North
-    postcode: '1212'
-    country: Bangladesh
-    country_code: BD
-  
+    street: Donald Bren Hall, University of California, Irvine
+    city: Irvine
+    region: CA
+    postcode: '92697'
+    country: United States
+    country_code: US
+
 design:
   columns: '2'
 ---

@@ -1,6 +1,10 @@
 ---
 title: MIPS 4 Bit Processor Design
 date: "2020-12-21T13:15:46.151Z"
+summary: A 4-bit MIPS processor supporting 12 instructions, designed and validated in the Logisim simulator.
+
+tags:
+  - Architecture
 
 # Optional external URL for project (replaces project detail page).
 external_link: ""

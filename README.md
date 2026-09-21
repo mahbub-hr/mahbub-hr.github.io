@@ -1,44 +1,42 @@
-<p align="center"><a href="https://wowchemy.com/templates/" target="_blank" rel="noopener"><img src="https://wowchemy.com/uploads/readmes/academic_logo_200px.png" alt="Hugo Academic Template for Wowchemy Website Builder"></a></p>
+# mahbub-hr.github.io
 
-# Academic Template for [Hugo](https://github.com/gohugoio/hugo)
+Source for my personal academic website, published at <https://mahbub-hr.github.io/>.
 
-The Hugo **Academic Resumé Template** empowers you to create your job-winning online resumé and showcase your academic publications.
+Built with [Hugo](https://gohugo.io/) and the Wowchemy v5 academic theme, consumed as a Hugo Module.
 
-[Check out the latest demo](https://academic-demo.netlify.app/) of what you'll get in less than 10 minutes, or [view the showcase](https://wowchemy.com/user-stories/).
+## Layout
 
-[**Wowchemy**](https://wowchemy.com) makes it easy to create a beautiful website for free. Edit your site in Markdown, Jupyter, or RStudio (via Blogdown), generate it with Hugo, and deploy with GitHub or Netlify. Customize anything on your site with widgets, themes, and language packs.
+| Path | What lives there |
+| --- | --- |
+| `content/authors/admin/_index.md` | Bio, interests, education, social links — drives the About section and site metadata |
+| `content/home/` | Homepage sections (experience, skills, projects, publications, service, teaching, contact) |
+| `content/project/` | One folder per project |
+| `content/publication/` | One folder per publication |
+| `config/_default/` | Hugo configuration, site params, navigation menu |
+| `CV_google_student_researcher.tex` | CV source; the PDF is built by CI, never committed |
 
-- 👉 [**Get Started**](https://wowchemy.com/templates/)
-- 📚 [View the **documentation**](https://wowchemy.com/docs/)
-- 💬 [Chat with the **Wowchemy community**](https://discord.gg/z8wNYzb) or [**Hugo community**](https://discourse.gohugo.io)
-- 🐦 Twitter: [@wowchemy](https://twitter.com/wowchemy) [@GeorgeCushen](https://twitter.com/GeorgeCushen) [#MadeWithWowchemy](https://twitter.com/search?q=(%23MadeWithWowchemy%20OR%20%23MadeWithAcademic)&src=typed_query)
-- 💡 [Request a **feature** or report a **bug** for _Wowchemy_](https://github.com/wowchemy/wowchemy-hugo-modules/issues)
-- ⬆️ **Updating Wowchemy?** View the [Update Guide](https://wowchemy.com/docs/guide/update/) and [Release Notes](https://wowchemy.com/updates/)
+## Running locally
 
-## Crowd-funded open-source software
+Requires Hugo **extended** 0.85.x and Go (for module resolution):
 
-To help us develop this template and software sustainably under the MIT license, we ask all individuals and businesses that use it to help support its ongoing maintenance and development via sponsorship.
+```bash
+hugo server --disableFastRender --i18n-warnings   # or: ./view.sh
+```
 
-### [❤️ Click here to unlock rewards with sponsorship](https://wowchemy.com/plans/)
+The site is served at <http://localhost:1313>.
 
-## Ecosystem
+> Hugo is pinned to 0.85.0. The theme modules date from 2021 and break on modern Hugo —
+> `site.IsMultiLingual` became a hard error in 0.124, and the `paginate` config key was
+> removed in 0.141. Upgrading means migrating to Hugo Blox, which is a separate project.
 
-* **[Hugo Academic CLI](https://github.com/wowchemy/hugo-academic-cli):** Automatically import publications from BibTeX
+## Deployment
 
-[![Screenshot](https://raw.githubusercontent.com/wowchemy/wowchemy-hugo-modules/main/academic.png)](https://wowchemy.com)
+`.github/workflows/gh-pages.yml` runs on every push to `master`:
 
-## Demo image credits
+1. Compiles `CV_google_student_researcher.tex` with pdflatex and stages the PDF at
+   `static/uploads/CV_Mahbub_Raton.pdf`, so the published CV can never drift from its source.
+2. Builds the site with `hugo --minify`.
+3. Pushes `public/` to the `gh-pages` branch, which GitHub Pages serves.
 
-- [Open book](https://unsplash.com/photos/J4kK8b9Fgj8)
-- [Course](https://unsplash.com/photos/JKUTrJ4vK00)
-
-## Latest news
-<!--START_SECTION:news-->
-* [Hugo vs Quarto: Which One is Better for 2023?](https:&#x2F;&#x2F;hugoblox.com&#x2F;blog&#x2F;hugo-vs-quarto&#x2F;)
-* [Easily make an academic CV website to get more cites and grow your audience 🚀](https:&#x2F;&#x2F;hugoblox.com&#x2F;blog&#x2F;easily-make-academic-website&#x2F;)
-* [What&#39;s new in v5.2?](https:&#x2F;&#x2F;hugoblox.com&#x2F;blog&#x2F;whats-new-in-v5.2&#x2F;)
-* [What&#39;s new in v5.1?](https:&#x2F;&#x2F;hugoblox.com&#x2F;blog&#x2F;whats-new-in-v5.1&#x2F;)
-* [Version 5.0 (February 2021)](https:&#x2F;&#x2F;hugoblox.com&#x2F;blog&#x2F;version-5.0-february-2021&#x2F;)
-<!--END_SECTION:news-->
-
-[![Analytics](https://ga-beacon.appspot.com/UA-78646709-2/starter-academic/readme?pixel)](https://github.com/igrigorik/ga-beacon)
+Pull requests run steps 1–2 only, so a broken build or a CV that fails to compile is caught
+before merge. The workflow can also be triggered manually from the Actions tab.

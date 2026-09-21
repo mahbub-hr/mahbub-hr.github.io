@@ -1,6 +1,10 @@
 ---
 title: "SliveredChain: A Storage Optimized Private Blockchain"
 date: "2020-11-21T13:15:46.151Z"
+summary: An undergraduate thesis on cutting the storage each node of a private blockchain must hold, by sharding the chain across peers with fault-tolerant redundancy.
+
+tags:
+  - Systems
 
 # Optional external URL for project (replaces project detail page).
 external_link: ""

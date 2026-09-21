@@ -1,41 +1,102 @@
-# This is a basic workflow to help you get started with Actions
-name: github pages
+name: Build & deploy site
+
 on:
   push:
-    branches:
-      - master  # Set a branch to deploy
+    branches: [master]
   pull_request:
+    branches: [master]
+  workflow_dispatch: # lets you force a deploy manually
+
+# peaceiris/actions-gh-pages pushes the built site to the gh-pages branch.
+permissions:
+  contents: write
+
+concurrency:
+  group: gh-pages-${{ github.ref }}
+  # Cancel superseded PR builds, but never cancel a deploy mid-flight.
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+env:
+  # Pinned: the Wowchemy v5 modules from 2021 need >= 0.84.1 extended, and break on modern
+  # Hugo (site.IsMultiLingual -> ERROR since 0.124; `paginate` removed in 0.141).
+  HUGO_VERSION: '0.85.0'
+  HUGO_ENV: production
+  # Makes the Hugo Modules cache land in a predictable path (otherwise version-dependent).
+  HUGO_CACHEDIR: /tmp/hugo_cache
+  # Hugo defaults module.proxy to "direct" (git clone). The wowchemy repo was renamed to
+  # HugoBlox/kit, so go through the Go module proxy instead of relying on the redirect.
+  HUGO_MODULE_PROXY: 'https://proxy.golang.org,direct'
+  CV_TEX: CV_google_student_researcher.tex
+  CV_PDF: CV_Mahbub_Raton.pdf
 
 jobs:
-  deploy:
-    runs-on: ubuntu-20.04
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
+  build-deploy:
+    runs-on: ubuntu-24.04 # 20.04 retired 2025-04-15; ubuntu-latest -> 26.04 in Nov 2026
+    timeout-minutes: 30
+
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v7
         with:
-          submodules: true  # Fetch Hugo themes (true OR recursive)
-          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+          fetch-depth: 0 # full history for .GitInfo/.Lastmod
+
+      # ---------- LaTeX CV: must run BEFORE hugo so the PDF is in static/ ----------
+      - name: Compile CV with pdflatex
+        uses: xu-cheng/latex-action@v4 # TeX Live full scheme; latexmk -pdf => pdflatex
+        with:
+          root_file: ${{ env.CV_TEX }}
+          compiler: latexmk
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+
+      - name: Stage CV into static/uploads
+        run: |
+          set -euo pipefail
+          built="${CV_TEX%.tex}.pdf"
+          test -s "$built"
+          mkdir -p static/uploads
+          cp "$built" "static/uploads/${CV_PDF}"
+          ls -l static/uploads
+
+      # ---------- Hugo ----------
+      - name: Setup Go # required: the site uses Hugo Modules
+        uses: actions/setup-go@v7
+        with:
+          go-version: '1.24'
+          cache: false # Hugo puts GOPATH inside HUGO_CACHEDIR, cached below
 
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.85.0'
+          hugo-version: ${{ env.HUGO_VERSION }}
           extended: true
 
-      - uses: actions/cache@v2
+      - name: Cache Hugo modules and generated resources
+        uses: actions/cache@v6
         with:
-          path: /tmp/hugo_cache
-          key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
+          path: |
+            ${{ env.HUGO_CACHEDIR }}
+            resources/_gen
+          key: ${{ runner.os }}-hugo-${{ env.HUGO_VERSION }}-${{ hashFiles('go.sum') }}
           restore-keys: |
-            ${{ runner.os }}-hugomod-
-      
+            ${{ runner.os }}-hugo-${{ env.HUGO_VERSION }}-
+            ${{ runner.os }}-hugo-
+
       - name: Build
-        run: hugo --minify
-        
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/master' }}
+        run: |
+          set -euo pipefail
+          hugo version
+          hugo --minify
+          # Fail loudly if the CV did not make it into the published site.
+          test -s "public/uploads/${CV_PDF}"
+
+      # ---------- Deploy (skipped on pull_request) ----------
+      - name: Deploy to gh-pages
+        if: github.event_name != 'pull_request'
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+          publish_branch: gh-pages
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'deploy: ${{ github.sha }}'

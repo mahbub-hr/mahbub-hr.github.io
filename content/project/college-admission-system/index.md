@@ -2,7 +2,7 @@
 title: College Admission System
 summary: For higher secondary education, Bangladeshi mainstream students must be enrolled in colleges after passing the Secondary School Certificate Examination (SSC). The goal of College Admission System project is to create a web-based application to facilitate the admission process by obeying the guideline passed by the Ministry of Education.
 tags:
-- Web Development, Spring Boot
+  - Systems
 date: "2022-11-07T00:00:00Z"
 
 # Optional external URL for project (replaces project detail page).
@@ -12,13 +12,6 @@ image:
   caption: College Admission System Demo Site
   focal_point: Smart
 
-links:
-# - icon: twitter
-#   icon_pack: fab
-#   name: Follow
-#   url: https://twitter.com/georgecushen
-- name: Demo Website
-  url : http://43.224.110.77:3000
 url_code: ""
 url_pdf: ""
 url_slides: ""

@@ -6,3 +6,13 @@
 public/
 jsconfig.json
 node_modules/
+
+# LaTeX build artifacts (the CV PDF is compiled in CI, not committed)
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+CV_google_student_researcher.pdf
+static/uploads/CV_Mahbub_Raton.pdf

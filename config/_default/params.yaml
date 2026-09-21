@@ -14,21 +14,20 @@ font_size: L
 
 site_type: Person
 local_business_type: ''
-org_name: ''
-description: ''
+org_name: 'University of California, Irvine'
+description: 'Mahbub H. Raton is a PhD student at UC Irvine working on compilers, computer architecture, and systems reliability — LLVM transformation passes for hardware fault detection, architectural fault injection in gem5, and x86-to-ARM binary translation.'
 twitter: ''
 
 # Contact (edit or remove options as required)
 
-# email: test@example.org
-# phone: 888 888 88 88
+email: mahbub.mmhr@gmail.com
 address:
-  street: United City, Madani Ave 
-  city: Dhaka
-  region: Dhaka North
-  postcode: '1212'
-  country: Bangladesh
-  country_code: BD
+  street: Donald Bren Hall, University of California, Irvine
+  city: Irvine
+  region: CA
+  postcode: '92697'
+  country: United States
+  country_code: US
 # coordinates:
 #   latitude: '37.4275'
 #   longitude: '-122.1697'
@@ -76,8 +75,11 @@ address_format: en-us
 
 highlight: true
 highlight_languages:
-  - r
-math: false
+  - c
+  - cpp
+  - python
+  - llvm
+math: true
 diagram: false
 privacy_pack: false
 edit_page:

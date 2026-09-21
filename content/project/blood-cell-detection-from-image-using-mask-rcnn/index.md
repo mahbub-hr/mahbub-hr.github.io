@@ -1,6 +1,10 @@
 ---
 title: Blood cell detection from image using Mask-RCNN
 date: "2020-12-21T13:15:46.151Z"
+summary: Automatic identification and counting of red blood cells, white blood cells, and platelets from blood smear images using Mask-RCNN.
+
+tags:
+  - Machine Learning
 
 # Optional external URL for project (replaces project detail page).
 external_link: ""
