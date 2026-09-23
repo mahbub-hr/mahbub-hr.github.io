@@ -30,7 +30,6 @@ education:
   courses:
     - course: PhD in Computer Science
       institution: University of California, Irvine
-      year: 2028 (expected)
     - course: MS in Computer Science
       institution: University of California, Irvine
       year: 2026
