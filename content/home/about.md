@@ -24,5 +24,5 @@ design:
     image: IMG_7908.JPG.jpeg
     image_size: cover
     image_position: center
-    image_darken: 0.6
+    image_darken: 0.35
 ---
