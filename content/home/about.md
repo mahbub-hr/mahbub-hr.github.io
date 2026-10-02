@@ -21,8 +21,8 @@ author: admin
 
 design:
   background:
-    image: IMG_7908.JPG.jpeg
+    image: bg_boat_river.JPG
     image_size: cover
     image_position: center
-    image_darken: 0.2
+    image_darken: 0.35
 ---
