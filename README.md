@@ -9,11 +9,10 @@ Built with [Hugo](https://gohugo.io/) and the Wowchemy v5 academic theme, consum
 | Path | What lives there |
 | --- | --- |
 | `content/authors/admin/_index.md` | Bio, interests, education, social links — drives the About section and site metadata |
-| `content/home/` | Homepage sections (experience, skills, projects, publications, service, teaching, contact) |
+| `content/home/` | Homepage sections (experience, skills, projects, publications, service, teaching) |
 | `content/project/` | One folder per project |
 | `content/publication/` | One folder per publication |
 | `config/_default/` | Hugo configuration, site params, navigation menu |
-| `CV_google_student_researcher.tex` | CV source; the PDF is built by CI, never committed |
 
 ## Running locally
 
@@ -33,10 +32,8 @@ The site is served at <http://localhost:1313>.
 
 `.github/workflows/gh-pages.yml` runs on every push to `master`:
 
-1. Compiles `CV_google_student_researcher.tex` with pdflatex and stages the PDF at
-   `static/uploads/CV_Mahbub_Raton.pdf`, so the published CV can never drift from its source.
-2. Builds the site with `hugo --minify`.
-3. Pushes `public/` to the `gh-pages` branch, which GitHub Pages serves.
+1. Builds the site with `hugo --minify`.
+2. Pushes `public/` to the `gh-pages` branch, which GitHub Pages serves.
 
-Pull requests run steps 1–2 only, so a broken build or a CV that fails to compile is caught
-before merge. The workflow can also be triggered manually from the Actions tab.
+Pull requests run step 1 only, so a broken build is caught before merge. The workflow can
+also be triggered manually from the Actions tab.

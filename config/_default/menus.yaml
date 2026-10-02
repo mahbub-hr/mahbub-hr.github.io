@@ -22,9 +22,3 @@ main:
   - name: Teaching
     url: '#teaching'
     weight: 60
-  - name: Contact
-    url: '#contact'
-    weight: 70
-  - name: CV
-    url: uploads/CV_Mahbub_Raton.pdf
-    weight: 80

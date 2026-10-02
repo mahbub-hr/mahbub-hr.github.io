@@ -7,12 +7,12 @@ public/
 jsconfig.json
 node_modules/
 
-# LaTeX build artifacts (the CV PDF is compiled in CI, not committed)
+# LaTeX: CV source is kept locally, not tracked in this repo
+CV_google_student_researcher.tex
 *.aux
 *.fdb_latexmk
 *.fls
 *.log
 *.out
 *.synctex.gz
-CV_google_student_researcher.pdf
-static/uploads/CV_Mahbub_Raton.pdf
+*.pdf

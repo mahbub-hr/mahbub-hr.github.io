@@ -26,8 +26,6 @@ env:
   # Hugo defaults module.proxy to "direct" (git clone). The wowchemy repo was renamed to
   # HugoBlox/kit, so go through the Go module proxy instead of relying on the redirect.
   HUGO_MODULE_PROXY: 'https://proxy.golang.org,direct'
-  CV_TEX: CV_google_student_researcher.tex
-  CV_PDF: CV_Mahbub_Raton.pdf
 
 jobs:
   build-deploy:
@@ -40,24 +38,6 @@ jobs:
         with:
           fetch-depth: 0 # full history for .GitInfo/.Lastmod
 
-      # ---------- LaTeX CV: must run BEFORE hugo so the PDF is in static/ ----------
-      - name: Compile CV with pdflatex
-        uses: xu-cheng/latex-action@v4 # TeX Live full scheme; latexmk -pdf => pdflatex
-        with:
-          root_file: ${{ env.CV_TEX }}
-          compiler: latexmk
-          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
-
-      - name: Stage CV into static/uploads
-        run: |
-          set -euo pipefail
-          built="${CV_TEX%.tex}.pdf"
-          test -s "$built"
-          mkdir -p static/uploads
-          cp "$built" "static/uploads/${CV_PDF}"
-          ls -l static/uploads
-
-      # ---------- Hugo ----------
       - name: Setup Go # required: the site uses Hugo Modules
         uses: actions/setup-go@v7
         with:
@@ -86,10 +66,8 @@ jobs:
           set -euo pipefail
           hugo version
           hugo --minify
-          # Fail loudly if the CV did not make it into the published site.
-          test -s "public/uploads/${CV_PDF}"
 
-      # ---------- Deploy (skipped on pull_request) ----------
+      # Deploy is skipped on pull_request, so PRs are build-only checks.
       - name: Deploy to gh-pages
         if: github.event_name != 'pull_request'
         uses: peaceiris/actions-gh-pages@v4
