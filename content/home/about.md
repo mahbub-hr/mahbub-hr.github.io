@@ -25,4 +25,5 @@ design:
     image_size: cover
     image_position: center
     image_darken: 0.35
+    text_color_light: true
 ---
