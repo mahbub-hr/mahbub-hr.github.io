@@ -18,4 +18,11 @@ title: ''
 # This should be the username (folder name) of a profile in your `content/authors/` folder.
 # See https://wowchemy.com/docs/get-started/#introduce-yourself
 author: admin
+
+design:
+  background:
+    image: IMG_7908.JPG.jpeg
+    image_size: cover
+    image_position: center
+    image_darken: 0.6
 ---
